@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "zivali",
+  "info": {
+    "singularName": "zival",
+    "pluralName": "zivali",
+    "displayName": "Živali",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Vzdevek": {
+      "type": "string"
+    },
+    "Identifikacija": {
+      "type": "string"
+    },
+    "Vrsta": {
+      "type": "string"
+    },
+    "Pasma": {
+      "type": "string"
+    },
+    "Spol": {
+      "type": "enumeration",
+      "enum": [
+        "M",
+        "Ž"
+      ]
+    },
+    "DatumRojstva": {
+      "type": "date"
+    },
+    "Visina": {
+      "type": "float"
+    },
+    "Teza": {
+      "type": "float"
+    },
+    "cepljenja": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cepljenje.cepljenje",
+      "mappedBy": "zivali"
+    },
+    "lastnik": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lastnik.lastnik",
+      "inversedBy": "zivali"
+    }
+  }
+}

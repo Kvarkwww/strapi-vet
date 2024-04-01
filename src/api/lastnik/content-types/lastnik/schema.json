@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lastniki",
+  "info": {
+    "singularName": "lastnik",
+    "pluralName": "lastniki",
+    "displayName": "Lastnik",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Ime": {
+      "type": "string"
+    },
+    "Priimek": {
+      "type": "string"
+    },
+    "EMSO": {
+      "type": "string"
+    },
+    "DatumRojstva": {
+      "type": "date"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Telefon": {
+      "type": "integer"
+    },
+    "Naslov": {
+      "type": "string"
+    },
+    "zivali": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::zival.zival",
+      "mappedBy": "lastnik"
+    }
+  }
+}

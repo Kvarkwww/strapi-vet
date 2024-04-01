@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cepljenja",
+  "info": {
+    "singularName": "cepljenje",
+    "pluralName": "cepljenja",
+    "displayName": "Cepljenje"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "zivali": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::zival.zival",
+      "inversedBy": "cepljenja"
+    },
+    "VrstaCepiva": {
+      "type": "string"
+    },
+    "DatumCepljenja": {
+      "type": "date"
+    },
+    "Veljavnost": {
+      "type": "date"
+    },
+    "opomnik_cepljenjes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::opomnik-cepljenje.opomnik-cepljenje",
+      "mappedBy": "cepljenje"
+    }
+  }
+}

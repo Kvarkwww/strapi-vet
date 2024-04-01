@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "opomnik_cepljenja",
+  "info": {
+    "singularName": "opomnik-cepljenje",
+    "pluralName": "opomnik-cepljenja",
+    "displayName": "opomnikCepljenje"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "datumOpomnika": {
+      "type": "date"
+    },
+    "poslano": {
+      "type": "boolean"
+    },
+    "cepljenje": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cepljenje.cepljenje",
+      "inversedBy": "opomnik_cepljenjes"
+    }
+  }
+}
